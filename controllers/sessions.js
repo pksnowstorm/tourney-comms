@@ -26,7 +26,7 @@ sessionsRouter.post('/', (req, res) => {
     }, (error, foundUser) => {
         // send error message if no user is found
         if (!foundUser) {
-            res.send(`Oops! No user with that email address has been registered.`);
+            res.render(`errors/register.ejs`);
         } else {
             // If a user has been found 
             // compare the given password with the hashed password we have stored
@@ -41,7 +41,7 @@ sessionsRouter.post('/', (req, res) => {
                 res.redirect('/');
             } else {
                 // if the passwords don't match
-                res.send('Oops! Invalid credentials.');
+                res.render('errors/match.ejs');
             }
         }
     });
