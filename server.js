@@ -26,6 +26,8 @@ const userController = require('./controllers/users');
 app.use('/users', userController);
 const sessionsController = require('./controllers/sessions');
 app.use('/sessions', sessionsController);
+const tournamentController = require('./controllers/tournament');
+app.use('/tournament', tournamentController);
 app.get('/', (req, res) => {
 	if (req.session.currentUser) {
 		res.render('dashboard.ejs', {
