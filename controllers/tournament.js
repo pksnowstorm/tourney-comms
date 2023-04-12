@@ -15,4 +15,20 @@ tournamentRouter.post('/', (req, res) => {
     });
 });
 
+tournamentRouter.get('/', (req, res) => {
+    Tournament.find({}, (error, allTournament) => {
+        res.render('tournament/index.ejs', {
+            tournament: allTournament,
+        })
+    })
+})
+
+tournamentRouter.get('/:id', (req, res) => {
+    Tournament.findById(req.params.id, (err, foundTournament) => {
+		res.render('tournament/show.ejs', {
+            tournament: foundTournament,
+        })
+	})
+})
+
 module.exports = tournamentRouter;
