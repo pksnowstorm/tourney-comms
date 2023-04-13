@@ -7,7 +7,10 @@ const tournamentSchema = Schema({
   name: { type: String },
   date: { type: String },
   address: { type: String },
-  rules: { type: String }
+  rules: { type: String },
+  numberOfParticipants: { type: Number },
+  participants:{ type: String },
+  openToPublic: { type: String },
 });
 
 // User Model
