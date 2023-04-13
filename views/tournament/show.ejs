@@ -5,6 +5,10 @@
 </head>
 <body>
     <%- include('../partials/nav.ejs')  %>
+    <% if(currentUser.email == tournament.organizerEmail) { %>
+		<a href="/">Delete</a>
+		<a href="/tournament/<%=tournament._id; %>/edit">Edit</a>
+	<% } %>
     <h1><%=tournament.name %></h1>
     <h2>Contact Info:</h2>
     <p><%=tournament.organizerName %></p>

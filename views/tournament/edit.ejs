@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/head.ejs')  %>
+</head>
+
+<body>
+	<%- include('../partials/nav.ejs')  %>
+    <h1>Edit Tournament</h1>
+	<form action='/tournament/<%=tournament._id%>?_method=PUT' method="POST">
+
+		<label for="startDate">Start Date:</label>
+		<input type="date" name="startDate" id="startDate" /><br>
+
+		<label for="endDate">End Date:</label>
+		<input type="date" name="endDate" id="endDate" /><br>
+
+		<label for="time">Start Time:</label>
+		<input type="time" name="time" id="time" /><br>
+
+        <label for="address">Address:</label>
+		<input type="address" name="address" id="address" /> <br>
+
+        <label for="rules">Rules:</label>
+		<textarea type="rules" name="rules" id="rules"></textarea> <br>
+
+        <label for="numberOfPatricipants">Number of Participants:</label>
+		<input type="numberOfParticipants" name="numberOfParticipants" id="numberOfParticipants" /> <br>
+		
+		<label for="openToPublic">Open to Public:</label>
+		<input type="checkbox" name="openToPublic" id="openToPublic" /> <br>
+
+		<input type="submit" value="Submit Changes" />
+	</form>
+</body>
+
+</html>
