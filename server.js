@@ -6,7 +6,6 @@ const app = express();
 const db = mongoose.connection;
 const session = require('express-session');
 const MONGODB_URL = process.env.MONGODB_URL;
-const bodyParser = require('body-parser')
 mongoose.connect(MONGODB_URL , {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
@@ -15,9 +14,6 @@ db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
 app.use(express.static('public'));
-app.use(express.static(__dirname));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.urlencoded({ extended: true }));
 app.use(
     session({
