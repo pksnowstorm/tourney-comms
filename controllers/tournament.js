@@ -3,6 +3,14 @@ const tournamentRouter = express.Router();
 const Tournament = require('../models/tournament.js');
 const User = require('../models/user.js');
 
+// New (Registration page)
+tournamentRouter.get('/new', (req, res) => {
+	res.render('tournament/new.ejs', {
+		currentTournament: req.session.currentTournament,
+        currentUser: req.session.currentUser
+	});
+});
+
 //Index
 tournamentRouter.get('/', async (req, res) => {
     await Tournament.find({}, (error, allTournament) => {
@@ -50,21 +58,13 @@ tournamentRouter.put('/:id', async (req, res) => {
 //Create
 tournamentRouter.post('/', (req, res) => {
     if (req.body.openToPublic === 'on') {
-		req.body.openToPublic = true;
+        req.body.openToPublic = true;
 	} else {
 		req.body.openToPublic = false;
 	}
     Tournament.create(req.body, (error, createdTournament) => {
         res.redirect('/');
     });
-});
-
-// New (Registration page)
-tournamentRouter.get('/new', (req, res) => {
-	res.render('tournament/new.ejs', {
-		currentTournament: req.session.currentTournament,
-        currentUser: req.session.currentUser
-	});
 });
 
 //Show

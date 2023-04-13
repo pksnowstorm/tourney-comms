@@ -26,11 +26,29 @@
     <h2>Open to Public:</h2>
     <% if(tournament.openToPublic) { %>
 		<p>Yes</p>
-        <input type="submit" value="Register">
 	<% } else { %>
 		<p>Invitation Only</p>
 	<% } %>
     <h2>Participants:</h2>
+    <p><%=tournament.numberOfParticipants %></p>
     <p><%=tournament.participants %></p>
+    <div class='container'>
+        <br>
+        <div class='jumbotron'>
+        <h1 class='display-4'>Send Message</h1>
+        <br>
+        <input id = 'currentUser.name' class='form-control' placeholder='Name'>
+        <br>
+        <textarea id = 'message' class='form-control' placeholder='Your Message Here'>
+       </textarea>
+        <br>
+        <button id='send' class='btn btn-success'>Send</button>
+        </div>
+        <div id='messages'>
+       </div>
+       </div>
+       <script>
+       
+       </script>
 </body>
 </html>
