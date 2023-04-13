@@ -12,6 +12,11 @@ tournamentRouter.get('/new', (req, res) => {
 });
 
 tournamentRouter.post('/', (req, res) => {
+    if (req.body.openToPublic === 'on') {
+		req.body.openToPublic = true;
+	} else {
+		req.body.openToPublic = false;
+	}
     Tournament.create(req.body, (error, createdTournament) => {
         res.redirect('/');
     });

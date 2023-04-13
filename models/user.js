@@ -8,7 +8,7 @@ const userSchema = Schema({
   password: { type: String, required: true },
   firstName: { type: String },
   lastName: { type: String },
-  pronouns: { type: String }
+  pronouns: { type: String },
 });
 
 // User Model

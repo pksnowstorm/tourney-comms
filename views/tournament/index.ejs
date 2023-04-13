@@ -19,7 +19,7 @@
         <% tournament.forEach(tournament => { %>
             <tr>    
                 <td><%=tournament.name %></td>
-                <td><%=tournament.date %></td>
+                <td><%=tournament.startDate %> to <%=tournament.endDate %></td>
                 <td><%=tournament.address %></td>
                 <td><a href="/tournament/<%=tournament._id; %>">For More Information</a></td>
             </tr>

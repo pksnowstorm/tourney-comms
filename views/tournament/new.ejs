@@ -12,20 +12,35 @@
 	<%- include('../partials/nav.ejs')  %>
     <h1>Create a Tournament</h1>
 	<form action='/tournament' method='POST'>
-		<label for="name">Name:</label>
-		<input type="name" name="name" id="name" />
+		<label for="name">Tournament Name:</label>
+		<input type="name" name="name" id="name" /> <br>
 
-		<label for="date">Date:</label>
-		<input type="date" name="date" id="date" />
+		<label for="organizerName">Organizer Name:</label>
+		<input type="organizerName" name="organizerName" id="organizerName" /><br>
+
+		<label for="organizerEmail">Organizer Email:</label>
+		<input type="organizerEmail" name="organizerEmail" id="organizerEmail" /><br>
+
+		<label for="startDate">Start Date:</label>
+		<input type="date" name="startDate" id="startDate" /><br>
+
+		<label for="endDate">End Date:</label>
+		<input type="date" name="endDate" id="endDate" /><br>
+
+		<label for="time">Start Time:</label>
+		<input type="time" name="time" id="time" /><br>
 
         <label for="address">Address:</label>
-		<input type="address" name="address" id="address" />
+		<input type="address" name="address" id="address" /> <br>
 
         <label for="rules">Rules:</label>
-		<textarea type="rules" name="rules" id="rules"></textarea>
+		<textarea type="rules" name="rules" id="rules"></textarea> <br>
 
         <label for="numberOfPatricipants">Number of Participants:</label>
-		<input type="numberOfParticipants" name="numberOfParticipants" id="numberOfParticipants" />
+		<input type="numberOfParticipants" name="numberOfParticipants" id="numberOfParticipants" /> <br>
+		
+		<label for="openToPublic">Open to Public:</label>
+		<input type="checkbox" name="openToPublic" id="openToPublic" /> <br>
 
 		<input type="submit" value="Register">
 	</form>

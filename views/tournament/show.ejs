@@ -9,12 +9,23 @@
 <body>
     <%- include('../partials/nav.ejs')  %>
     <h1><%=tournament.name %></h1>
-    <h2>Date (yyyy/mm/dd):</h2>
-    <p><%=tournament.date %></p>
+    <h2>Contact Info:</h2>
+    <p><%=tournament.organizerName %></p>
+    <p><%=tournament.organizerEmail %></p>
+    <h2>Start Date (yyyy/mm/dd):</h2>
+    <p><%=tournament.startDate %> to <%=tournament.endDate %></p>
+    <h2>Time:</h2>
+	<p><%=tournament.time %></p>
     <h2>Address:</h2>
     <p><%=tournament.address %></p>
     <h2>Rules:</h2>
     <p><%=tournament.rules %></p>
+    <h2>Open to Public:</h2>
+    <% if(tournament.openToPublic) { %>
+		<p>Yes</p>
+	<% } else { %>
+		<p>Invitation Only</p>
+	<% } %>
     <h2>Participants:</h2>
     <p><%=tournament.participants %></p>
 </body>
