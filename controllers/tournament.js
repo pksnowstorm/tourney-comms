@@ -32,6 +32,11 @@ tournamentRouter.get('/:id/edit', (req, res) => {
 	})
 })
 
+tournamentRouter.delete('/:id', async (req, res) => {
+    await Tournament.findByIdAndRemove(req.params.id)
+    res.redirect('/')
+})
+
 tournamentRouter.put('/:id', (req, res) => {
     if (req.body.openToPublic === 'on') {
 		req.body.openToPublic = true;
