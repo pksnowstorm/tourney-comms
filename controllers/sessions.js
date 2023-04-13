@@ -26,7 +26,9 @@ sessionsRouter.post('/', (req, res) => {
     }, (error, foundUser) => {
         // send error message if no user is found
         if (!foundUser) {
-            res.render(`errors/register.ejs`);
+            res.render(`errors/register.ejs`, {
+                currentUser: req.session.currentUser
+            });
         } else {
             // If a user has been found 
             // compare the given password with the hashed password we have stored
@@ -41,7 +43,9 @@ sessionsRouter.post('/', (req, res) => {
                 res.redirect('/');
             } else {
                 // if the passwords don't match
-                res.render('errors/match.ejs');
+                res.render('errors/match.ejs', {
+                    currentUser: req.session.currentUser
+                });
             }
         }
     });
