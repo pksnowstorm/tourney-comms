@@ -11,8 +11,6 @@ Javascript
 
 jQuery
 
-Bootstrap
-
 Skeleton CSS
 
 Normalize CSS
