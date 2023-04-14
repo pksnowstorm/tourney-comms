@@ -40,3 +40,7 @@ https://tourney-comms.herokuapp.com/
 **Future Enhancements**
 
 Easier navigation around the app
+
+Auto register for tournaments that are open to the public
+
+Actually be able to chat with people on the app
