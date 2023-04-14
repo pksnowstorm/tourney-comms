@@ -5,6 +5,9 @@ const mongoose = require ('mongoose');
 const app = express();
 const db = mongoose.connection;
 const session = require('express-session');
+const bodyParser = require('body-parser');
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 const MONGODB_URL = process.env.MONGODB_URL;
 mongoose.connect(MONGODB_URL , {
 	useNewUrlParser: true,
@@ -13,6 +16,12 @@ mongoose.connect(MONGODB_URL , {
 db.on('error', (err) => console.log(err.message + ' is mongo not running?'));
 db.on('connected', () => console.log('mongo connected'));
 db.on('disconnected', () => console.log('mongo disconnected'));
+io.on('connection', () =>{
+	console.log('a user is connected')
+  })
+app.use(express.static(__dirname));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(
@@ -28,6 +37,9 @@ const sessionsController = require('./controllers/sessions');
 app.use('/sessions', sessionsController);
 const tournamentController = require('./controllers/tournament');
 app.use('/tournament', tournamentController);
+const messageController = require('./controllers/message');
+app.use('/message', messageController);
+app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
 	if (req.session.currentUser) {
 		res.render('dashboard.ejs', {
