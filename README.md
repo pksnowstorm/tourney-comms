@@ -18,3 +18,15 @@ Skeleton CSS
 Normalize CSS
 
 **Screenshots**
+
+**Getting Started**
+
+All Dates are year, month, day
+
+All time are formatted in military time
+
+https://tourney-comms.herokuapp.com/
+
+**Future Enhancements**
+
+Favorite a card
