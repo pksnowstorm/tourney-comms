@@ -6,7 +6,9 @@
 </head>
 
 <body>
-	<%- include('../partials/nav.ejs')  %>
+	<nav>
+		<%- include('../partials/nav.ejs')  %>
+		</nav>
     <h1>Edit Tournament</h1>
 	<form action='/tournament/<%=tournament._id%>?_method=PUT' method="POST">
 

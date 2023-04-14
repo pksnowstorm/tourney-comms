@@ -4,6 +4,7 @@
     <%- include('../partials/head.ejs')  %>
 </head>
 <body>
+    <nav>
     <%- include('../partials/nav.ejs')  %>
     <% if(currentUser.email == tournament.organizerEmail) { %>
 		<form action="/tournament/<%=tournament._id %>?_method=DELETE" method="POST">
@@ -12,6 +13,7 @@
 		<a href="/tournament/<%=tournament._id; %>/edit">Edit</a>
         <a href="/message/<%=tournament._id; %>">Chat</a>
 	<% } %>
+    </nav>
     <h1><%=tournament.name %></h1>
     <h2>Contact Info:</h2>
     <p><%=tournament.organizerName %></p>
