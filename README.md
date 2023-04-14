@@ -28,4 +28,5 @@ All time are formatted in military time
 https://tourney-comms.herokuapp.com/
 
 **Future Enhancements**
+
 Easier navigation around the app
