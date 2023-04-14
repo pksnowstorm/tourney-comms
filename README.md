@@ -23,6 +23,8 @@ Normalize CSS
 
 ![image](https://user-images.githubusercontent.com/51368461/232089629-cc57c7ec-8864-4ae3-8c23-1bcf50104788.png)
 
+![image](https://user-images.githubusercontent.com/51368461/232089973-4d7a0ade-58a6-4031-a162-899cb19e4285.png)
+
 **Getting Started**
 
 All Dates are year, month, day
